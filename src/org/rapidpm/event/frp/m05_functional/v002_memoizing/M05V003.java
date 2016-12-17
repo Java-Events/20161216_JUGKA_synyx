@@ -1,6 +1,6 @@
 package org.rapidpm.event.frp.m05_functional.v002_memoizing;
 
-import org.rapidpm.workshop.frp.core.model.Memoizer;
+import org.rapidpm.event.frp.core.model.Memoizer;
 
 import java.util.function.Function;
 

@@ -1,7 +1,9 @@
 # LiveHacking 2016-12-16 at synyx Karlsruhe
  
+ ***For this project you will ned Java9 b145 or higher***
  
-The DAO refactoring result you can find [here](https://github.com/svenruppert/JDBC-DAO) 
+Try to refactor by yourself..  org.rapidpm.event.frp.m01_lambdas.v001.UserDAO
+One possible DAO refactoring solution you could find [here](https://github.com/svenruppert/JDBC-DAO) 
 
 The slides are in the _data folder.
 

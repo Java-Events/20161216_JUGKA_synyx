@@ -1,7 +1,5 @@
 package org.rapidpm.event.frp.core.model;
 
-import org.rapidpm.workshop.frp.m05_functional.v002_memoizing.M05V011;
-
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
@@ -44,22 +42,22 @@ public class Memoizer<T, U> {
 
 
   @FunctionalInterface
-  public interface TriFunction<T1, T2,T3, R> {
+  public interface TriFunction<T1, T2, T3, R> {
     R apply(T1 t1, T2 t2, T3 t3);
 
-    default <V> M05V011.TriFunction<T1, T2,T3, V> andThen(Function<? super R, ? extends V> after) {
+    default <V> TriFunction<T1, T2, T3, V> andThen(Function<? super R, ? extends V> after) {
       Objects.requireNonNull(after);
       return (T1 t1, T2 t2, T3 t3) -> after.apply(apply(t1, t2, t3));
     }
   }
 
-  public static <T1, T2,T3, R> M05V011.TriFunction<T1, T2,T3, R> memoize(final TriFunction<T1, T2,T3, R> threeFunc) {
-    final TriFunction<T1, T2,T3, Supplier<R>> threeFuncSupplier = (x, y, z) -> () -> threeFunc.apply(x, y,z);
+  public static <T1, T2, T3, R> TriFunction<T1, T2, T3, R> memoize(final TriFunction<T1, T2, T3, R> threeFunc) {
+    final TriFunction<T1, T2, T3, Supplier<R>> threeFuncSupplier = (x, y, z) -> () -> threeFunc.apply(x, y, z);
     final Function<T1, Function<T2, Function<T3, R>>> transformed
         = Memoizer.memoize(
         x -> Memoizer.memoize(
             y -> Memoizer.memoize(
-                z -> threeFuncSupplier.apply(x, y,z).get())));
+                z -> threeFuncSupplier.apply(x, y, z).get())));
     return (x, y, z) -> transformed.apply(x).apply(y).apply(z);
   }
 

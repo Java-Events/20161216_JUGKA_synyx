@@ -1,7 +1,8 @@
 package org.rapidpm.event.frp.m00_basics.v001;
 
-import static org.rapidpm.workshop.frp.m00_basics.v001.InterfaceA.doSomethingStaticA;
-import static org.rapidpm.workshop.frp.m00_basics.v001.InterfaceA.doSomethingStaticB;
+
+import static org.rapidpm.event.frp.m00_basics.v001.InterfaceA.doSomethingStaticA;
+import static org.rapidpm.event.frp.m00_basics.v001.InterfaceA.doSomethingStaticB;
 
 /**
  * Copyright (C) 2010 RapidPM
