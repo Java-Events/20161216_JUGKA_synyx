@@ -1,6 +1,6 @@
 # LiveHacking 2016-12-16 at synyx Karlsruhe
  
- ***For this project you will ned Java9 b145 or higher***
+ ***For this project you will need Java9 b145 or higher***
  
 Try to refactor by yourself..  org.rapidpm.event.frp.m01_lambdas.v001.UserDAO
 One possible DAO refactoring solution you could find [here](https://github.com/svenruppert/JDBC-DAO) 
